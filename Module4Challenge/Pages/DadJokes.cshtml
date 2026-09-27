@@ -1,0 +1,29 @@
+@page
+@model DadJokesModel
+@{
+    ViewData["Title"] = "Dad Joke Generator";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Dad Joke Generator</h1>
+
+    <div class="row">
+        @foreach (string joke in Model.CurrentJokes)
+        {
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Dad Joke</h5>
+                        <p class="card-text">@joke</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="text-center mt-4">
+        <form method="post">
+            <button type="submit" class="btn btn-primary">More Jokes</button>
+        </form>
+    </div>
+</div>
